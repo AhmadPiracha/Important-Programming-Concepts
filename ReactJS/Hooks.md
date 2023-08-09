@@ -43,7 +43,8 @@ In this example:
 The `useState` hook simplifies state management in functional components, making it more intuitive and concise. It's important to note that each state variable maintains its own state independently, so you can use `useState` multiple times in a single component to manage different pieces of state.
    
 
-2. The `useEffect` hook is a fundamental feature in React that allows you to perform side effects in functional components. Side effects could include things like data fetching, DOM manipulation, and subscriptions. It's a replacement for the lifecycle methods (`componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`) in class components.
+2. The `useEffect` hook is a fundamental feature in React that allows you to perform side effects in functional components. Side effects could include things like data fetching, DOM manipulation, and subscriptions. 
+It's a replacement for the lifecycle methods (`componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`) in class components.
 
 The basic syntax of the `useEffect` hook is as follows:
 
