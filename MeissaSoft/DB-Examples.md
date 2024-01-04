@@ -179,5 +179,3 @@ In summary, DDL is focused on defining and modifying the database's structure, w
      SET StudentID = NULL
      WHERE StudentID = 101;
      ```
-
-These examples should help you better understand these database concepts and operations.
