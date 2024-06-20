@@ -1,0 +1,188 @@
+1. Ruby on Rails: A server-side web application framework in Ruby following MVC pattern, promoting CoC, DRY, and active record pattern.
+
+2. MVC Architecture in Rails:
+
+   - Model: Data-related logic, interacts with DB.
+   - View: UI logic, renders data.
+   - Controller: Processes requests, fetches data from Model, passes to View.
+
+3. 'yield' in Ruby: Pauses method execution to pass control to a block, allowing flexibility and code reuse. Can pass parameters to blocks.
+
+4. Active Record in Rails: ORM system for database interaction using Ruby-like syntax, supporting data validation, associations, and advanced queries.
+
+5. Default Rake tasks in Rails:
+
+   - Database: `rake db:migrate`, `rake db:create`, `rake db:drop`, `rake db:seed`
+   - Tests: `rake test`, `rake test:models`
+   - Assets: `rake assets:precompile`
+   - Logs: `rake log:clear`
+
+6. Gem in Ruby: A package/module providing specific functionality (e.g., Devise for authentication, Paperclip for file attachment).
+
+7. REST in Rails: Uses standard HTTP verbs for manipulating resources (GET, POST, PUT, DELETE) with URL routes for resource actions.
+
+8. CSRF Protection in Rails: Uses a security token in forms and Ajax requests to prevent CSRF attacks.
+
+9. String vs Symbol in Ruby:
+
+   - String: Mutable, new object for each identical string.
+   - Symbol: Immutable, unique, reused object for the same symbol.
+
+10. 'render' vs 'redirect_to' in Rails:
+
+    - render: Shows a new page without changing URL.
+    - redirect_to: Sends user to a new URL, triggers new browser request.
+
+11. Migration in Rails: Tool for database schema changes, defined in Ruby, allowing version control and database-agnostic updates.
+
+12. Asset Pipeline in Rails: Framework for compressing and concatenating assets, supports writing in CoffeeScript, Sass, ERB, and includes features like compression, concatenation, preprocessing, and fingerprinting.
+
+13. 'has_many' vs 'belongs_to' in Rails:
+
+    - belongs_to: Child model, foreign key in the child.
+    - has_many: Parent model, foreign key in the associated model.
+
+14. Modules in Rails:
+
+    - Namespacing: Avoids naming collisions.
+    - Mixins: Include methods in classes.
+    - Also used for custom exceptions and extending other modules/classes.
+
+15. Difference between class and module in Ruby:
+
+    - Class: Blueprint for objects; can be instantiated and subclassed.
+    - Module: Collection of methods/constants; can't be instantiated/subclassed; used as mixins.
+
+---
+
+16. Purpose of 'self' in Ruby:
+
+    - Instance methods: `self` = instance of the class.
+    - Class methods: `self` = the class itself.
+    - Class/module definitions outside methods: `self` = class/module being defined.
+
+---
+
+17. Difference between 'nil?', 'empty?', and 'blank?' in Rails:
+
+    - `nil?`: True if object is `nil`.
+    - `empty?`: True if array/hash/string has no elements.
+    - `blank?`: True if object is `nil`, empty, or whitespace.
+
+---
+
+18. Use of 'respond_to' in Rails controllers:
+
+    - Specifies response format (HTML, JSON, etc.) based on request headers.
+    - Example: `respond_to do |format| { format.html; format.json { render json: @user } }`
+
+---
+
+19. Difference between 'PUT' and 'PATCH' in Rails:
+
+    - `PUT`: Full update; idempotent.
+    - `PATCH`: Partial update; not necessarily idempotent.
+    - Both map to `update` action.
+
+---
+
+20. Purpose of 'before_action' in Rails:
+
+    - Runs methods before controller actions.
+    - Common uses: authentication, resource loading, redirection.
+    - Specify actions with `:only` or `:except`.
+
+---
+
+---
+
+21. Rails AJAX Implementation: Uses `remote: true` option with form helpers and `link_to`.
+
+---
+
+22. Role of Rack: Provides a common interface for HTTP servers to ease Rails integration.
+
+---
+
+23. Database Transactions: Uses `ActiveRecord::Base.transaction` to handle and rollback transactions on exceptions.
+
+---
+
+24. `responders` Gem: Simplifies controller actions by providing reusable responders for behaviors like flash messages and HTTP cache.
+
+---
+
+25. Internationalization (i18n): Uses YAML files in `config/locales`, `I18n.t` method, and supports locale setting, pluralization, and localization of dates/times.
+
+---
+
+26. Active Job: Declares jobs for background processing, supports multiple queuing backends, and handles asynchronous or scheduled tasks.
+
+---
+
+27. Caching Mechanisms: Includes page caching, action caching, fragment caching, SQL caching, and low-level caching using `ActiveSupport::Cache::Store`.
+
+---
+
+28. `turbolinks` Gem: Speeds up page loads by keeping the current page instance alive and replacing only the body and head title.
+
+---
+
+29. File Uploads with Active Storage:
+    - Use file field in forms.
+    - Attach files in models with `has_one_attached`.
+    - Permit file parameters in controllers.
+    - Display uploaded files in views.
+
+---
+
+30. Webpacker Role: Manages JavaScript, CSS, and other assets using Webpack. Supports modern JS features, npm integration, and asset optimization.
+
+---
+
+31. Real-Time Features with Action Cable: Handles WebSockets for real-time communication, defines channels, subscribes clients, and broadcasts data.
+
+---
+
+32. `spring` Gem: Speeds up development by preloading the application in the background, reducing the need to boot for each command.
+
+---
+
+33. API Versioning: Implemented using routing constraints or request headers.
+
+---
+
+34. `puma` Gem: A fast, concurrent web server handling multiple threads and processes, default in Rails 5+.
+
+---
+
+35. Security Features:
+    - XSS protection
+    - CSRF protection
+    - SQL injection protection
+    - Secure cookies
+    - HSTS
+    - CSP
+    - Strong parameters
+
+---
+
+36. `byebug` Gem: A feature-rich Ruby debugger using the TracePoint and Debug Inspector APIs.
+
+---
+
+37. Email Sending with Action Mailer: Define mailer classes and views, integrates with SMTP/Sendmail, supports attachments and custom headers.
+
+---
+
+38. `sprockets` Gem: Concatenates and serves JavaScript, CoffeeScript, CSS, LESS, Sass, and SCSS.
+
+---
+
+39. Background Jobs: Managed with `ActiveJob` for asynchronous processing outside the request-response cycle.
+
+---
+
+40. `brakeman` Gem: A static analysis security scanner for Rails applications, producing vulnerability reports.
+
+---
