@@ -1,0 +1,498 @@
+1. What is Ruby on Rails?
+
+   - Ruby on Rails is a server-side web application framework written in Ruby.
+   - It adheres to the Model-View-Controller (MVC) architectural pattern.
+   - It has default structures for web pages, web services, and a database.
+   - Encourages and simplifies web standards like JSON or XML for data transfer along with HTML, CSS, and JavaScript for user interface.
+   - Highlights engineering patterns and paradigms like convention over configuration (CoC), don't repeat yourself (DRY), and the active record pattern.
+
+2. Can you explain the MVC architecture of Rails?
+
+   - MVC stands for Model-View-Controller.
+   - Separates application into three interconnected components.
+     - Model: Data-related logic, interacts with the database, defines schema and relationships, represents data and rules to manipulate it.
+     - View: UI logic, represents presentation layer, responsible for rendering data.
+     - Controller: Interface between Model and View, processes incoming requests, interacts with Model, passes data to View for rendering.
+   - In Rails, a user request goes to the Controller, interacts with the Model, and the data is passed to the View to render.
+
+3. What is the role of the 'yield' keyword in Ruby?
+
+   - `yield` is used within a method to pass control to a block provided during the method call.
+   - Allows greater flexibility and code reuse.
+   - Can pass parameters to the block.
+   - Presence of a block can be checked with `block_given?`.
+
+4. What is Active Record in Rails?
+
+   - The M in MVC (the model) responsible for representing business data and logic.
+   - Implementation of the Active Record design pattern (ORM system).
+   - Provides an abstraction over the SQL database.
+   - Allows database interaction in a Ruby-like manner without writing SQL queries.
+   - Offers features like data validation, model associations, and advanced query capabilities.
+
+5. What default Rake tasks do you use in Rails?
+
+   - Rake is a task management utility in Ruby.
+   - Used to automate tasks in Rails.
+   - Common tasks:
+     - Database tasks: `rake db:migrate`, `rake db:create`, `rake db:drop`, `rake db:seed`
+     - Test tasks: `rake test`, `rake test:models`
+     - Asset tasks: `rake assets:precompile`
+     - Log tasks: `rake log:clear`
+   - Custom Rake tasks can be defined in the `lib/tasks` directory.
+
+6. What is a Gem in Ruby?
+
+   - A Gem is a module or package providing specific functionality.
+   - Examples: Devise (authentication), Paperclip (file attachment).
+   - Rails itself is a gem.
+
+7. What is REST and how does Rails follow it?
+
+   - REST (Representational State Transfer) is an architectural style for web services.
+   - Rails uses REST conventions for building web applications.
+   - Resources correspond to URLs, manipulated using HTTP verbs (GET, POST, PUT, DELETE).
+   - Example routes for an `articles` resource:
+     - `GET /articles`: List all articles.
+     - `POST /articles`: Create a new article.
+     - `GET /articles/:id`: Show a specific article.
+     - `PUT /articles/:id`: Update a specific article.
+     - `DELETE /articles/:id`: Delete a specific article.
+   - Rails supports RESTful applications with routing, controllers, and views.
+
+8. What is CSRF? How does Rails protect against it?
+
+   - CSRF (Cross-Site Request Forgery) tricks a victim into submitting a malicious request.
+   - Rails includes a security token in forms and Ajax requests to protect against CSRF.
+   - The session is reset if the security token doesn't match.
+
+9. Explain the difference between a String and a Symbol in Ruby
+
+   - String: Mutable, sequence of characters, can be altered after creation, new object for each identical string.
+     ```ruby
+     string1 = "example"
+     string2 = "example"
+     string1.object_id != string2.object_id # true
+     ```
+   - Symbol: Immutable, unique, reused object for the same symbol.
+     ```ruby
+     symbol1 = :example
+     symbol2 = :example
+     symbol1.object_id == symbol2.object_id # true
+     ```
+
+10. What is the difference between 'render' and 'redirect_to' in Rails?
+
+    - render: Shows a new page without changing the URL.
+    - redirect_to: Sends the user to a new URL, responds with 301, triggers a new browser request.
+
+11. What is a migration in Rails?
+
+    - A tool for changing the database schema over time.
+    - Defined using a Ruby DSL.
+    - Allows creating, dropping tables, changing column data types, adding/removing indexes, etc.
+    - Version-controlled and database-agnostic.
+
+12. What is the asset pipeline in Rails?
+
+    - Framework for compressing and concatenating JavaScript, CSS, and image assets.
+    - Enables asset compression, concatenation, preprocessing, and fingerprinting.
+    - Allows writing assets in languages like CoffeeScript, Sass, and ERB.
+    - Enabled by default from Rails 3.1.
+
+13. What is the difference between 'has_many' and 'belongs_to' associations in Rails?
+
+    - belongs_to: One-to-one relationship towards another model (child), foreign key in the child model.
+      ```ruby
+      class Comment < ApplicationRecord
+        belongs_to :post
+      end
+      ```
+    - has_many: One-to-many relationship from one model to another (parent), foreign key in the associated model.
+      ```ruby
+      class Post < ApplicationRecord
+        has_many :comments
+      end
+      ```
+
+14. What is the purpose of modules in Rails?
+
+    - Group related methods, constants, and classes.
+    - Namespacing: Avoids naming collisions.
+    - Mixins: Methods defined in a module can be included in a class.
+    - Used for custom exceptions and extending other modules or classes.
+
+15. What is the difference between a class and a module in Ruby?
+
+    The main difference between a class and a module in Ruby lies in their usage and functionality:
+
+    - Class: A blueprint from which individual objects are created. It defines attributes and methods that each object of the class will have. A class can be instantiated, allowing for inheritance, meaning you can create a subclass that inherits all the characteristics of its superclass.
+    - Module: A collection of methods, constants, and class variables. Modules are defined much like classes, but they can't be instantiated or subclassed or have instances. Instead, you can mix a module into a class or another module using the `include` method, essentially using it as a mixin to add additional behavior to the class.
+
+    Summary: Use a class to create objects with similar behavior (instances of the same class) and use a module when you want to group functionalities and include them into other classes as needed.
+
+---
+
+16. What is the purpose of 'self' in Ruby?
+
+    In Ruby, `self` refers to the current object within a code block. Its specific meaning varies depending on the context in which it's used:
+
+    - Within instance methods: `self` points to the instance of the class that is executing the current method. This allows you to call other instance methods, access instance variables, or set properties on the instance.
+
+      ```ruby
+      class Example
+        attr_accessor :name
+
+        def initialize(name)
+          @name = name
+        end
+
+        def update_name(new_name)
+          self.name = new_name # self refers to the instance
+        end
+      end
+      ```
+
+    - Within class methods: When used inside class methods, `self` refers to the class itself, allowing you to define or call other class methods or access class variables from within.
+
+      ```ruby
+      class Example
+        @class_variable = 10
+
+        def self.class_method
+          @class_variable # self refers to the class
+        end
+      end
+      ```
+
+    - Within class or module definitions, but outside any method: Here, `self` refers to the class or module being defined. This is often used when declaring class methods or class/module variables.
+
+      ```ruby
+      class Example
+        def self.class_method
+          # Method definition where self refers to the class
+        end
+      end
+      ```
+
+    Summary: The purpose of `self` is to provide a clear and explicit way to reference the current object or class, enhancing code readability and maintainability by making it clear whether you're dealing with instance-level or class-level data and behavior.
+
+---
+
+17. What is the difference between 'nil?', 'empty?', and 'blank?' in Ruby on Rails?
+
+    In Ruby on Rails, `nil?`, `empty?`, and `blank?` are methods that can be used to check if an object has a value or not, but they work in slightly different ways:
+
+    - `nil?`: This is a standard Ruby method that can be called on all objects. It returns true if the object is `nil`, and false otherwise.
+    - `empty?`: This method is mainly used on arrays, hashes, and strings. It returns true if these objects contain no elements or if a string length is zero. It will raise an error if used on `nil`.
+    - `blank?`: This is a Rails method that can be used on any object. It returns true if the object is `nil`, empty, or a whitespace string. For example, it will return true for `nil`, `[]`, `{}`, `""`, `" "`, etc.
+
+    Summary: `nil?` checks if an object is `nil`, `empty?` checks if an object has no elements or characters, and `blank?` is a more general check for whether an object is `nil`, empty, or a whitespace string.
+
+---
+
+18. What is the use of 'respond_to' in Rails controllers?
+
+    `respond_to` is used in Rails controllers to specify what kind of content the method will respond with, based on the HTTP headers in the request. It allows your application to serve different types of content (like HTML, XML, JSON, etc.) from the same controller action, depending on the client's preferred format.
+
+    ```ruby
+    def show
+      @user = User.find(params[:id])
+
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @user }
+      end
+    end
+    ```
+
+    In this example, if the client requests HTML (or doesn't specify a format), Rails will render the `show.html.erb` view. If the client requests JSON, Rails will render the user data as JSON.
+
+    Summary: `respond_to` is a key part of building RESTful applications with Rails, allowing the same resources to be accessed in different formats for different purposes.
+
+---
+
+19. What is the difference between 'PUT' and 'PATCH' in Rails?
+
+    'PUT' and 'PATCH' are HTTP verbs used to update resources in a RESTful system, and Rails routes can be configured to respond to both. However, there's a key difference in how they are intended to be used:
+
+    - `PUT`: Idempotent, meaning it should always result in the same resource state. It's used when you want to update the entire resource with a completely new set of data. If you send the same 'PUT' request multiple times, the result should always be the same final resource state.
+    - `PATCH`: Used when you want to make a partial update to the resource, like changing just one field. It's not necessarily idempotent, as multiple identical 'PATCH' requests may have different results if applied more than once.
+
+    In Rails, both `PUT` and `PATCH` map to the `update` action in the controller, but the way you handle the incoming parameters in the `update` action may differ based on whether you're expecting a full or partial update.
+
+    Summary: `PUT` is for full updates and is idempotent, while `PATCH` is for partial updates and may not be idempotent.
+
+---
+
+20. What is the purpose of 'before_action' in Rails?
+
+    `before_action` is a filter provided by Rails. It's a method that gets called before any controller action is performed. It's useful for a variety of purposes, such as:
+
+    - Authentication: You can use a `before_action` to check if a user is logged in before letting them access some actions.
+    - Loading a resource: If several actions need to work with the same database resource, you can use a `before_action` to load the resource and make it available to all the actions.
+    - Redirecting: If you need to redirect the request under certain conditions, you can use a `before_action` to do it before the controller action is run.
+
+    You can specify which actions the `before_action` applies to with the `:only` or `:except` options. For example, `before_action :authenticate_user!, only: [:edit, :update]` will run the `authenticate_user!` method before the `edit` and `update` actions.
+
+    Summary: `before_action` allows you to run methods before controller actions, commonly used for authentication, resource loading, and redirection.
+
+---
+
+
+
+21. How does Rails implement AJAX?
+
+    Rails uses the `remote: true` option to enable AJAX. This option can be used with form helpers and `link_to`. When this option is set, Rails will use unobtrusive JavaScript to send an AJAX request instead of a regular HTTP request.
+
+---
+
+22. What is the role of Rack in Rails?
+
+    Rack provides a minimal, modular, and adaptable interface for developing web applications in Ruby. It abstracts the common API of HTTP servers, allowing Rails to interface with many different web servers easily.
+
+---
+
+23. How does Rails handle database transactions?
+
+    Rails provides a simple API for handling transactions. You can start a transaction with `ActiveRecord::Base.transaction` and perform database operations inside a block. Rails will roll back the transaction if any exception is raised within the block.
+
+---
+
+24. What is the purpose of the `responders` gem in Rails?
+
+    The `responders` gem in Rails is a collection of Rails responders, objects that handle the behavior of controller actions. It aims to simplify the creation of custom responders by providing reusable behavior.
+
+    This gem provides a set of `responders` modules to dry up your Rails 4.2+ app. It introduces a responder for flash messages, HTTP cache, and others. It also provides a generator for you to create your custom responders.
+
+    For example, the FlashResponder sets the flash message based on the controller action and the resource status. The HttpCacheResponder handles HTTP cache, returning a 304 status when the resource is not modified.
+
+    By using the responders gem, you can make your controllers DRYer and more consistent.
+
+---
+
+25. How does Rails handle internationalization (i18n)?
+
+    Rails provides a simple and flexible set of APIs for handling internationalization. The process involves abstracting all the strings in your application into a separate file, which you can then translate into different languages.
+
+    Here's how it works:
+    - You store translations in YAML files, one for each language, under the `config/locales` directory. The translations are stored as key-value pairs, where the key is a symbol you'll use to reference the translation, and the value is the translated string.
+    - You use the `I18n.t` method (or its shorthand version, `t`) in your views, controllers, and models to replace hard-coded strings with references to your translations.
+    - You set the current locale with `I18n.locale = :es` (for Spanish, for example), and Rails will use that locale for all translations until you change it.
+
+    Rails' internationalization system also supports pluralization, interpolation, and localization of dates, times, and numbers. It's a powerful tool for making your application accessible to users worldwide.
+
+---
+
+26. What is the role of Active Job in Rails?
+
+    Active Job is a framework for declaring jobs that various queuing backends can run. These jobs are units of work that can be performed outside of the usual request-response cycle, allowing long-running tasks to be performed without tying up the web server.
+
+    Active Job provides a common interface for creating background jobs, allowing you to switch queuing backends easily. It has built-in queuing adapters for multiple queuing systems, including Sidekiq, Resque, and Delayed Job.
+
+    With Active Job, you can schedule tasks to run asynchronously, at a set time in the future, or even on a recurring schedule. It also provides hooks for callbacks when a job is enqueued, performed, or encounters an error.
+
+---
+
+27. How does Rails handle caching?
+
+    Caching is a technique Rails uses to speed up content delivery by storing the results of expensive or time-consuming operations and reusing them in subsequent requests. Rails provides several mechanisms for caching:
+    - Page caching: Allows the request for a generated page to be fulfilled by the webserver without going through the Rails stack. Removed from Rails 4 due to its complexity.
+    - Action caching: Similar to page caching but the incoming web request hits the Rails stack, allowing filters to run before serving the cache.
+    - Fragment caching: Stores a block or fragment of the view to prevent costly database queries and render calls.
+    - SQL caching: Caches the result set returned by each query so that it hits the cache instead of the database if the same query is returned in the same request.
+    - Low-level caching: Supports low-level caching in your application, allowing great flexibility in caching.
+
+    Rails uses the `ActiveSupport::Cache::Store` module for interacting with the caching system, allowing different cache stores to be used interchangeably.
+
+---
+
+28. What is the purpose of the `turbolinks` gem in Rails?
+
+    The `turbolinks` gem is designed to make navigating your web application faster. It improves the perceived performance of your application by speeding up page loads.
+
+    Instead of letting the browser recompile the JavaScript and CSS between each page change, it keeps the current page instance alive and replaces only the body and the title in the head. This gives you the speed of a single-page web application without having to write your application as a single-page web application.
+
+    When you click on a link, turbolinks automatically fetches the page, swaps in its `<body>`, and merges its `<head>`, all without incurring the cost of a full page load.
+
+    It's important to note that turbolinks can lead to some complexities, especially when dealing with JavaScript that's designed to run on a full page load. However, it can significantly improve performance when used correctly.
+
+---
+
+29. How does Rails handle file uploads?
+
+    Rails can handle file uploads using the Active Storage framework. Active Storage assists in uploading files to a cloud storage service like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage, and attaching those files to Active Record objects.
+
+    Here's a basic example of how it works:
+    1. In your form, you would include a file field:
+       ```ruby
+       <%= form_with model: @user do |form| %>
+         <%= form.file_field :avatar %>
+       <% end %>
+       ```
+    2. In your model, you would declare that the model has an attached file:
+       ```ruby
+       class User < ApplicationRecord
+         has_one_attached :avatar
+       end
+       ```
+    3. In your controller, you would permit the file parameter:
+       ```ruby
+       params.require(:user).permit(:username, :avatar)
+       ```
+    4. You can then display the uploaded file in your view:
+       ```ruby
+       <%= image_tag @user.avatar %>
+       ```
+
+    Active Storage provides a lot of flexibility for handling file uploads, including support for direct uploads to the cloud, generating image variants, and creating previews of non-image files.
+
+---
+
+30. What is the role of Webpacker in Rails?
+
+    Webpacker is a wrapper for the Webpack module bundler. It's a tool that helps you manage JavaScript, CSS, and other assets in your Rails application.
+
+    Webpacker makes it easy to use Webpack in your Rails application to bundle and manage assets. It allows you to use the latest JavaScript features, including modules, and supports other assets like CSS, images, and fonts.
+
+    Here are some of the things you can do with Webpacker:
+    - Organize your JavaScript code into modules, which can import and export functions and objects from and to other modules.
+    - Use modern JavaScript features by leveraging Babel, a JavaScript compiler.
+    - Easily integrate with npm to manage JavaScript libraries and dependencies.
+    - Use loaders to process other types of files, like CSS, SCSS, images, and fonts.
+    - Optimize your assets for production with minification, tree shaking, and other techniques.
+
+    Starting from Rails 6, Webpacker is the default JavaScript compiler for Rails, replacing the asset pipeline for JavaScript management, although the asset pipeline is still used for other types of assets.
+
+---
+
+31. How does Rails handle real-time features?
+
+    Rails can handle real-time features with Action Cable, a framework for handling WebSockets. WebSockets provide a persistent connection between the client and the server, enabling real-time features like chat, notifications, live updates, and more.
+
+    Action Cable integrates WebSockets with the rest of your Rails application. It allows you to write real-time features in the same style and form as the rest of your application. Here's a basic example of how it works:
+    1. You define a channel, which is a logical unit of work similar to a controller in a regular MVC setup.
+       ```ruby
+       class ChatChannel < ApplicationCable::Channel
+         def subscribed
+           stream_from "chat_#{params[:room]}"
+         end
+
+         def receive(data)
+           ActionCable.server.broadcast("chat_#{params[:room]}", data)
+         end
+       end
+       ```
+    2. On the client side, you subscribe to the channel and define how to handle incoming data:
+       ```javascript
+       App.chat = App.cable.subscriptions.create({ channel: "ChatChannel", room: "room1" }, {
+         received: function(data) {
+           // Handle incoming data
+         }
+       });
+       ```
+    3. You can then broadcast data to the channel from anywhere in your Rails application:
+       ```ruby
+       ActionCable.server.broadcast("chat_room1", message: "Hello, world!")
+       ```
+
+    This is a simple example, but Action Cable is capable of much more, including broadcasting updates to multiple users, tracking user presence, and more. It's a powerful tool for adding real-time features to your Rails application.
+
+---
+
+32. What is the purpose of the `spring` gem in Rails?
+
+    The `spring` gem is a Rails application preloader
+
+. It is designed to speed up development by running your application in the background, so that there is no need to boot it when you run a test, rake task, or migration.
+
+    Here's how it works: when you run a command that has been springified (like `rails console` or `rspec`), Spring loads a copy of your application into memory and keeps it running in the background. Then, when you run the command, it uses the already-loaded application, so it doesn't have to boot the application again.
+
+    This can significantly speed up common development tasks. For example, running a single test or a rake task can be much faster with Spring because you don't have to wait for the entire Rails environment to load.
+
+    Spring is included by default in new Rails applications (from Rails 4.1 onwards). It's designed to be unobtrusive and to stay out of your way unless you explicitly use it.
+
+---
+
+33. How does Rails handle API versioning?
+
+    Rails doesn't provide a built-in way to handle API versioning, but it can be easily implemented using routing constraints or request headers.
+
+---
+
+34. What is the role of the `puma` gem in Rails?
+
+    The `puma` gem is a Ruby web server built for speed and parallelism. It's designed to handle concurrent connections in a multi-threaded environment, making it a good choice for any Rails application that expects to handle a large number of incoming requests at the same time.
+
+    Puma works by creating a new thread for each incoming request and can handle many requests concurrently. This makes it more efficient than single-threaded servers, especially for applications that make heavy use of I/O operations or external APIs.
+
+    Puma also supports "clustered mode" for multi-process environments, and "hybrid mode" which combines both multi-thread and multi-process.
+
+    Starting from Rails 5, Puma is the default web server for Rails in development and production. It's a robust, fast, and concurrent server, making it a great choice for running Rails applications.
+
+---
+
+35. How does Rails handle security?
+
+    Rails has a number of built-in features to handle security and help protect your application against common web attacks:
+    - Cross-site scripting (XSS) protection: Rails automatically escapes any data that is output in view templates, protecting against XSS attacks.
+    - Cross-site request forgery (CSRF) protection: Rails includes a CSRF protection mechanism which generates and checks a unique token for each form that is submitted.
+    - SQL injection protection: Active Record uses parameterized queries to ensure that all data sent to the database is properly escaped, protecting against SQL injection attacks.
+    - Secure cookies: Rails can store session data in cookies which are signed and/or encrypted to prevent tampering.
+    - HTTP strict transport security (HSTS): Rails can be configured to use HSTS, which tells the browser to only connect to your application over a secure connection.
+    - Content security policy (CSP): Rails 5.2 introduced support for creating and managing a content security policy for your application, helping to mitigate cross-site scripting and other content injection attacks.
+    - Strong parameters: This feature ensures that only the necessary attributes can be updated in the database, protecting against mass assignment vulnerabilities.
+
+    In addition to these features, Rails also provides a secure password hashing system via Active Model Secure Password and has a number of guides and resources available to help developers understand and mitigate common web security threats.
+
+---
+
+36. What is the purpose of the `byebug` gem in Rails?
+
+    The `byebug` gem is a simple-to-use, feature-rich debugger for Ruby. It uses the TracePoint API for execution control and the Debug Inspector API for call stack navigation, so it doesn't depend on internal core sources.
+
+---
+
+37. How does Rails handle email sending?
+
+    Rails handles email sending with the Action Mailer framework. Action Mailer allows you to send emails from your application using mailer classes and views.
+
+    Here's a basic example of how it works:
+    1. You create a mailer class, which is similar to a controller:
+       ```ruby
+       class UserMailer < ApplicationMailer
+         def welcome_email(user)
+           @user = user
+           mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+         end
+       end
+       ```
+    2. You create a view for the email, just like you would for a regular controller action:
+       ```erb
+       <!-- app/views/user_mailer/welcome_email.html.erb -->
+       Welcome, <%= @user.name %>!
+       ```
+    3. You can then send the email from anywhere in your application:
+       ```ruby
+       UserMailer.welcome_email(@user).deliver_now
+       ```
+
+    Action Mailer integrates with a number of delivery methods, including SMTP, Sendmail, and others. It also supports advanced features like attachments, multipart messages, and custom headers.
+
+---
+
+38. What is the role of the `sprockets` gem in Rails?
+
+    The `sprockets` gem is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, LESS, Sass, and SCSS.
+
+---
+
+39. How does Rails handle background jobs?
+
+    Rails can handle background jobs with the `ActiveJob` framework. It provides a way to run jobs asynchronously, outside of the request-response cycle.
+
+---
+
+40. What is the purpose of the `brakeman` gem in Rails?
+
+    The `brakeman` gem is a static analysis security vulnerability scanner for Ruby on Rails applications. It scans Rails applications and produces a report of all security issues it has found.
