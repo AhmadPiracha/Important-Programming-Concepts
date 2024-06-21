@@ -1,7 +1,7 @@
 **PIEA**:
 
 1. **Polymorphism**:
-   olymorphism means “many forms”. By its name, it is a feature that allows you to perform an action in multiple or different ways. When we talk about polymorphism, there isn’t a lot to discuss unless we talk about its types.
+   polymorphism means “many forms”. By its name, it is a feature that allows you to perform an action in multiple or different ways. When we talk about polymorphism, there isn’t a lot to discuss unless we talk about its types.
 
 There are two types of polymorphism:
 
