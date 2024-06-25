@@ -152,3 +152,164 @@ fs.readFile('example.txt', 'utf8', (err, data) => {
   - Create a simple React frontend to handle registration, login, and displaying protected data.
 
 By covering these topics, you'll have a comprehensive assessment test for evaluating MERN stack developers' skills and proficiency.
+
+
+
+
+#########################################################################################################################################
+
+Sure, here are more multiple-choice questions (MCQs) along with their answers for each component of the MERN stack:
+
+### MongoDB
+
+1. **Which command is used to update a document in MongoDB?**
+   a) db.collection.modify()  
+   b) db.collection.updateOne()  
+   c) db.collection.change()  
+   d) db.collection.updateDocument()  
+   **Answer:** b) db.collection.updateOne()
+
+2. **How do you delete a document in MongoDB?**
+   a) db.collection.delete()  
+   b) db.collection.remove()  
+   c) db.collection.deleteOne()  
+   d) db.collection.erase()  
+   **Answer:** c) db.collection.deleteOne()
+
+3. **Which of the following is used to perform aggregation operations in MongoDB?**
+   a) db.collection.aggregate()  
+   b) db.collection.group()  
+   c) db.collection.sum()  
+   d) db.collection.reduce()  
+   **Answer:** a) db.collection.aggregate()
+
+### Express.js
+
+4. **How do you define a middleware function in Express?**
+   a) app.use(route, callback)  
+   b) app.middleware(route, callback)  
+   c) app.add(route, callback)  
+   d) app.handle(route, callback)  
+   **Answer:** a) app.use(route, callback)
+
+5. **Which method is used to make a route parameter optional in Express?**
+   a) /:param?  
+   b) /param?  
+   c) /:param*  
+   d) /param*  
+   **Answer:** a) /:param?
+
+6. **What is the correct way to handle errors in an Express route?**
+   a) function(req, res) {}  
+   b) function(req, res, err) {}  
+   c) function(err, req, res, next) {}  
+   d) function(req, err, res, next) {}  
+   **Answer:** c) function(err, req, res, next) {}
+
+### React
+
+7. **What is the default port for a React application created using create-react-app?**
+   a) 3000  
+   b) 3001  
+   c) 8080  
+   d) 5000  
+   **Answer:** a) 3000
+
+8. **What is the purpose of React Fragments?**
+   a) To handle side effects  
+   b) To manage component state  
+   c) To return multiple elements without adding extra nodes to the DOM  
+   d) To connect to Redux store  
+   **Answer:** c) To return multiple elements without adding extra nodes to the DOM
+
+9. **Which lifecycle method is invoked after a component is rendered for the first time?**
+   a) componentWillMount  
+   b) componentDidMount  
+   c) componentWillUpdate  
+   d) componentDidUpdate  
+   **Answer:** b) componentDidMount
+
+### Node.js
+
+10. **Which of the following is a built-in module in Node.js?**
+    a) mongoose  
+    b) lodash  
+    c) http  
+    d) express  
+    **Answer:** c) http
+
+11. **What is the default behavior of the `fs.readFile` method in Node.js?**
+    a) Synchronous  
+    b) Asynchronous  
+    c) Parallel  
+    d) Concurrent  
+    **Answer:** b) Asynchronous
+
+12. **How can you create a buffer from a string in Node.js?**
+    a) Buffer.create()  
+    b) Buffer.from()  
+    c) Buffer.new()  
+    d) Buffer.string()  
+    **Answer:** b) Buffer.from()
+
+### Additional Questions
+
+#### MongoDB
+13. **Which of the following is true about MongoDB?**
+    a) It supports ACID transactions  
+    b) It is a relational database  
+    c) It uses a flexible schema  
+    d) It requires predefined schemas  
+    **Answer:** c) It uses a flexible schema
+
+14. **Which operator is used for pattern matching in MongoDB?**
+    a) $match  
+    b) $regex  
+    c) $like  
+    d) $pattern  
+    **Answer:** b) $regex
+
+#### Express.js
+15. **How do you define a route that handles all HTTP methods in Express?**
+    a) app.any()  
+    b) app.all()  
+    c) app.handle()  
+    d) app.route()  
+    **Answer:** b) app.all()
+
+16. **Which method is used to parse URL-encoded bodies in Express?**
+    a) app.use(express.bodyParser())  
+    b) app.use(express.urlencoded({ extended: true }))  
+    c) app.use(express.json())  
+    d) app.use(express.raw())  
+    **Answer:** b) app.use(express.urlencoded({ extended: true }))
+
+#### React
+17. **What is the purpose of `React.memo`?**
+    a) To create context  
+    b) To memoize expensive calculations  
+    c) To optimize functional components by memoizing them  
+    d) To handle side effects  
+    **Answer:** c) To optimize functional components by memoizing them
+
+18. **How do you pass data from a parent component to a child component in React?**
+    a) Using state  
+    b) Using props  
+    c) Using context  
+    d) Using refs  
+    **Answer:** b) Using props
+
+#### Node.js
+19. **Which of the following is true about Node.js?**
+    a) It is a multi-threaded framework  
+    b) It is based on the V8 JavaScript engine  
+    c) It is a client-side framework  
+    d) It is used for database management  
+    **Answer:** b) It is based on the V8 JavaScript engine
+
+20. **How do you export a function from a Node.js module?**
+    a) exports.functionName = function  
+    b) module.exports = functionName  
+    c) module.exports.functionName = function  
+    d) export function functionName() {}  
+    **Answer:** c) module.exports.functionName = function
