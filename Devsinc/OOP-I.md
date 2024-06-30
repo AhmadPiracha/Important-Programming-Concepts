@@ -4,12 +4,10 @@
 1. **Pillars of OOP (PIEA)**
    **Answer:** 
    - **Polymorphism:** Ability to take many forms (e.g., method overloading, method overriding).
-   - **Inheritance
-
-:** Mechanism by which one class can inherit the properties and behaviors of another class.
+   - **Inheritance:** Mechanism by which one class can inherit the properties and behaviors of another class.
    - **Encapsulation:** Bundling of data with methods that operate on the data (e.g., using private members and public methods).
    - **Abstraction:** Hiding the complex implementation details and showing only the essential features (e.g., using abstract classes and interfaces).
-
+  
 2. **Types of inheritance? Difference between Multiple and multilevel Inheritance**
    **Answer:**
    - **Single Inheritance:** One class inherits from one base class.
