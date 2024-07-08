@@ -51,8 +51,6 @@ You only need to know how to drive a car properly, not how the wires inside it a
 
 - If a method with the same method signature is presented in both child and parent class is known as method overriding.
 
-## Additional Important OOP Concepts
-
 ### Classes and Objects
 
 - **Class**: A blueprint for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).
