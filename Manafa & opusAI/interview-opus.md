@@ -59,7 +59,10 @@ Indexing refers to accessing elements of arrays, lists, or other data structures
 **Example in Linked Lists:**
 - To access the nth element in a linked list, you traverse the list from the head node, following the links until you reach the desired node.
 
+**Arrays**
 Arrays store elements in contiguous memory locations, resulting in easily calculable addresses for the elements stored and this allows faster access to an element at a specific index.
+
+**Linked lists**
 Linked lists are less rigid in their storage structure and elements are usually not stored in contiguous locations, hence they need to be stored with additional tags giving a reference to the next element. 
 
 ![image](https://github.com/user-attachments/assets/4a099b1c-63e0-4a86-8158-6c2f25f7ee1c)
