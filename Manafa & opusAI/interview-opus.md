@@ -67,6 +67,19 @@ Linked lists are less rigid in their storage structure and elements are usually 
 
 ![image](https://github.com/user-attachments/assets/4a099b1c-63e0-4a86-8158-6c2f25f7ee1c)
 
+1. Singly Linked List : In this type of linked list, every node stores address or reference
+of next node in list and the last node has next address or reference as NULL. For
+example 1->2->3->4->NULL
+
+2. Doubly Linked List : Here, here are two references associated with each node, One
+of the reference points to the next node and one to the previous node. Eg.
+NULL<-1<->2<->3->NULL
+
+3. Circular Linked List : Circular linked list is a linked list where all nodes are
+connected to form a circle. There is no NULL at the end. A circular linked list can be
+a singly circular linked list or doubly circular linked list. Eg. 1->2->3->1 [The next
+pointer of last node is pointing to the first]
+
 
 
 **Stack:**
