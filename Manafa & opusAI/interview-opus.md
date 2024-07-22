@@ -59,15 +59,11 @@ Indexing refers to accessing elements of arrays, lists, or other data structures
 **Example in Linked Lists:**
 - To access the nth element in a linked list, you traverse the list from the head node, following the links until you reach the desired node.
 
+Arrays store elements in contiguous memory locations, resulting in easily calculable addresses for the elements stored and this allows faster access to an element at a specific index.
+Linked lists are less rigid in their storage structure and elements are usually not stored in contiguous locations, hence they need to be stored with additional tags giving a reference to the next element. 
 
-**How is an Array different from Linked List?**
+![image](https://github.com/user-attachments/assets/4a099b1c-63e0-4a86-8158-6c2f25f7ee1c)
 
-- The size of the arrays is fixed, Linked Lists are Dynamic in size.
-- Inserting and deleting a new element in an array of elements is expensive, Whereas both insertion and deletion can easily be done in Linked Lists.
-- Random access is not allowed in Linked Listed.
-- Extra memory space for a pointer is required with each element of the Linked list.
-- Arrays have better cache locality that can make a pretty big difference in
-performance.
 
 
 **Stack:**
