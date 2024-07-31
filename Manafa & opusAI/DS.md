@@ -152,6 +152,46 @@ int main() {
 }
 ```
 
+
+### 4.1. Reverse an Array
+
+#### Pseudocode
+1. Define a function `reverseArray` that takes an array `arr` and its length `n`.
+2. Loop from 0 to `n/2 - 1` using a for loop with index `i`.
+3. For each iteration:
+   - Store `arr[i]` in a temporary variable `temp`.
+   - Assign the value of `arr[n-1-i]` to `arr[i]`.
+   - Assign the value of `temp` to `arr[n-1-i]`.
+
+#### C++ Code
+```cpp
+#include <iostream>
+using namespace std;
+
+void reverseArray(int arr[], int n) {
+    for (int i = 0; i < n / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[n - 1 - i];
+        arr[n - 1 - i] = temp;
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    
+    reverseArray(arr, n);
+    
+    cout << "Reversed array: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    
+    return 0;
+}
+```
+
 ### 5. Find Middle of Linked List
 
 #### Pseudocode
