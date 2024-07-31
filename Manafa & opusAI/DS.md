@@ -113,7 +113,9 @@ Here are the solutions for the specified problems:
 1. Define a function `reverseArray` that takes an array `arr` and its length `n`.
 2. Initialize two indices, `left` to 0 and `right` to `n - 1`.
 3. While `left` is less than `right`:
-   - Swap `arr[left]` and `arr[right]`.
+   - Store `arr[left]` in a temporary variable `temp`.
+   - Assign the value of `arr[right]` to `arr[left]`.
+   - Assign the value of `temp` to `arr[right]`.
    - Increment `left` and decrement `right`.
 
 #### C++ Code
@@ -126,7 +128,9 @@ void reverseArray(int arr[], int n) {
     int right = n - 1;
     
     while (left < right) {
-        swap(arr[left], arr[right]);
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
         left++;
         right--;
     }
